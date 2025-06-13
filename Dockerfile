@@ -25,7 +25,7 @@ FROM eclipse-temurin:17-jre-jammy
 WORKDIR /app
 
 # Argument to specify the JAR file name (optional, with a default)
-ARG JAR_FILE_NAME=department-service-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE_NAME=ineni_pt-0.0.1-SNAPSHOT.jar
 
 # Copy the JAR file from the build stage to the /app directory in the new stage
 # Adjust the JAR_FILE_NAME below if your artifactId or version in pom.xml is different
