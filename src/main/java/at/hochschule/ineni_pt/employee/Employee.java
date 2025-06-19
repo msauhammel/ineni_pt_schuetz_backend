@@ -17,10 +17,12 @@ public class Employee {
     private String email;
     private String position;
 
+/*
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "department_id")
     @JsonBackReference // To prevent infinite recursion during JSON serialization
     private Department department;
+*/
 
     // Constructors
     public Employee() {
@@ -31,7 +33,6 @@ public class Employee {
         this.lastName = lastName;
         this.email = email;
         this.position = position;
-        this.department = department;
     }
 
     // Getters and Setters
@@ -75,13 +76,13 @@ public class Employee {
         this.position = position;
     }
 
-    public Department getDepartment() {
+/*    public Department getDepartment() {
         return department;
     }
 
     public void setDepartment(Department department) {
         this.department = department;
-    }
+    }*/
 
     @Override
     public String toString() {
@@ -91,9 +92,6 @@ public class Employee {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", position='" + position + '\'' +
-                // Avoid printing department directly if it causes issues,
-                // or print only department.id
-                (department != null ? ", departmentId=" + department.getId() : ", department=null") +
                 '}';
     }
 }
