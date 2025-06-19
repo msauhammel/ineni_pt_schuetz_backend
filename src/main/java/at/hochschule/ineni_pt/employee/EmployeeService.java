@@ -25,7 +25,7 @@ public class EmployeeService {
     public Employee createEmployee(Employee employee, Long departmentId) {
         Department department = departmentRepository.findById(departmentId)
                 .orElseThrow(() -> new RuntimeException("Department not found with id: " + departmentId));
-        employee.setDepartment(department);
+        //employee.setDepartment(department);
         return employeeRepository.save(employee);
     }
 
@@ -57,7 +57,7 @@ public class EmployeeService {
         departmentIdOpt.ifPresent(departmentId -> {
             Department department = departmentRepository.findById(departmentId)
                     .orElseThrow(() -> new RuntimeException("Department not found with id: " + departmentId));
-            employee.setDepartment(department);
+           // employee.setDepartment(department);
         });
 
         return employeeRepository.save(employee);
