@@ -54,11 +54,13 @@ public class EmployeeService {
         employee.setEmail(employeeDetails.getEmail());
         employee.setPosition(employeeDetails.getPosition());
 
+/*
         departmentIdOpt.ifPresent(departmentId -> {
             Department department = departmentRepository.findById(departmentId)
                     .orElseThrow(() -> new RuntimeException("Department not found with id: " + departmentId));
            // employee.setDepartment(department);
         });
+*/
 
         return employeeRepository.save(employee);
     }
