@@ -41,7 +41,7 @@ public class EmployeeService {
         if (!departmentRepository.existsById(departmentId)) {
             throw new RuntimeException("Department not found with id: " + departmentId);
         }
-        return employeeRepository.findByDepartmentId(departmentId);
+        return null;//employeeRepository.findByDepartmentId(departmentId);
     }
 
     @Transactional

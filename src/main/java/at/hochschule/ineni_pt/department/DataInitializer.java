@@ -54,41 +54,7 @@ public class DataInitializer implements CommandLineRunner {
             logger.info("Data already exists, skipping initialization.");
         }
 
-        /*// Example of how to fetch and log departments with their employees
-        // This demonstrates the relationship and lazy loading (if @Transactional is present)
-        List<Department> departmentsWithEmployees = departmentRepository.findAll();
-        logger.info("Fetching departments and their employees:");
-        for (Department dept : departmentsWithEmployees) {
-            logger.info("Department: {} - {} employees.", dept.getName(), dept.getEmployees().size());
-            for (Employee emp : dept.getEmployees()) {
-                logger.info("  - Employee: {}, Position: {}", emp.getFirstName() + " " + emp.getLastName(), emp.getPosition());
-            }
-
-*/
         }
 
-/*    private static final Logger logger = LoggerFactory.getLogger(DataInitializer.class);
-    private final DepartmentRepository departmentRepository;
 
-    public DataInitializer(DepartmentRepository departmentRepository) {
-        this.departmentRepository = departmentRepository;
-    }
-
-    @Override
-    public void run(String... args) throws Exception {
-        logger.info("Initializing sample department data...");
-
-        if (departmentRepository.count() == 0) { // Only add if the table is empty
-            departmentRepository.save(new Department("Human Resources", "New York HQ, Floor 10"));
-            departmentRepository.save(new Department("Engineering", "San Francisco Tech Hub, Building A"));
-            departmentRepository.save(new Department("Marketing", "London Office, Suite 200"));
-            departmentRepository.save(new Department("Sales", "Chicago Branch, Floor 5"));
-            departmentRepository.save(new Department("Finance", "New York HQ, Floor 12"));
-            departmentRepository.save(new Department("Customer Support", "Remote"));
-
-            logger.info("Sample department data initialized: {} departments added.", departmentRepository.count());
-        } else {
-            logger.info("Department data already exists, skipping initialization.");
-        }
-    }*/
 }
