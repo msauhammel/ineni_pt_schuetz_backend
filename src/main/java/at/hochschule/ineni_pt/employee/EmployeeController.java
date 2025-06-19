@@ -34,9 +34,9 @@ public class EmployeeController {
     // Create a new employee and assign to a department
     @PostMapping("/employees")
     public ResponseEntity<?> createEmployee(@RequestBody EmployeeRequest employeeRequest) {
-        if (employeeRequest.departmentId == null) {
+        /*if (employeeRequest.departmentId == null) {
             return ResponseEntity.badRequest().body("departmentId is required to create an employee.");
-        }
+        }*/
         try {
             Employee employee = new Employee();
             employee.setFirstName(employeeRequest.firstName);
