@@ -22,9 +22,9 @@ public class EmployeeService {
     }
 
     @Transactional
-    public Employee createEmployee(Employee employee, Long departmentId) {
+    public Employee createEmployee(Employee employee, Long departmentId) {/*
         Department department = departmentRepository.findById(departmentId)
-                .orElseThrow(() -> new RuntimeException("Department not found with id: " + departmentId));
+                .orElseThrow(() -> new RuntimeException("Department not found with id: " + departmentId));*/
         //employee.setDepartment(department);
         return employeeRepository.save(employee);
     }
