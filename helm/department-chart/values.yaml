@@ -110,3 +110,4 @@ volumeMounts: []
 nodeSelector: {}
 tolerations: []
 affinity: {}
+databaseSecretName: pg-secret
