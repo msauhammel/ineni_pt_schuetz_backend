@@ -62,7 +62,7 @@ jobs:
           sed -i "s/^version: .*/version: $NEW_VERSION/" "${{ env.CHART_DIR }}/Chart.yaml"
           echo "new_version=$NEW_VERSION" >> "$GITHUB_OUTPUT"
 
-      - name: Update Helm values.yaml with image version
+      - name: Update Helm Values.yaml with image version
         run: |
           VALUES_FILE=${{ env.CHART_DIR }}/values.yaml
           yq eval ".image.repository = \"ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}\"" -i "$VALUES_FILE"
