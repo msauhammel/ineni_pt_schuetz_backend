@@ -25,5 +25,21 @@ spec:
             - name: http
               containerPort: 8081
               protocol: TCP
+          env:
+            - name: SPRING_DATASOURCE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: { { .Values.postgres.secretName } }
+                  key: { { .Values.postgres.urlKey } }
+            - name: SPRING_DATASOURCE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: { { .Values.postgres.secretName } }
+                  key: { { .Values.postgres.usernameKey } }
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: { { .Values.postgres.secretName } }
+                  key: { { .Values.postgres.passwordKey } }
           livenessProbe: {{ toYaml .Values.livenessProbe | nindent 12 }}
           readinessProbe: {{ toYaml .Values.readinessProbe | nindent 12 }}

@@ -110,3 +110,9 @@ volumeMounts: []
 nodeSelector: {}
 tolerations: []
 affinity: {}
+
+postgres:
+  secretName: pg-secret
+  urlKey: connection_string
+  usernameKey: username
+  passwordKey: password
